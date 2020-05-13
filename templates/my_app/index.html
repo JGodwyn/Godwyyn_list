@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <form action="{% url 'my_app:search' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name = "search" placeholder= "Search here" >
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+               <!--
+                    this inserts a send button when connected to the internet
+                    <i class="material-icons right">send</i>
+                -->
+          </button>
+    </form>
+{% endblock content %}
